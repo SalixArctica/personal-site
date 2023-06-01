@@ -24,7 +24,6 @@ const Links = styled.div`
 `
 
 const StyledA = styled.a`
-
   transition: .1s ease-in-out;
 
   &:hover {

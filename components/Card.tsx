@@ -21,6 +21,9 @@ const Img = styled.img`
   border-radius: 1rem 0 0 1rem;
   width: 300px;
   height: 200px;
+
+  object-fit: cover;
+  object-position: center;
   
   filter: grayscale(70%);
 
