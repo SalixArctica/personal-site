@@ -12,11 +12,11 @@ export const Row = styled.div<RowProps>`
   gap: 1rem;
 `
 
-export const Col = styled.div`
+export const Col = styled.div<{center: boolean}>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: ${({center}) => center ? 'center' : 'flex-start'};
   width: 100%;
   height: 100%;
   gap: 1rem;
@@ -24,7 +24,6 @@ export const Col = styled.div`
 `
 
 const PageContainer = styled.div`
-  margin: 0 30rem;
   padding: 3rem 0;
   height: 100vh;
   
@@ -45,15 +44,42 @@ const ScrollCol = styled(Col)`
   padding: 1rem 0;
 `
 
-export const PageLayout: React.FC<{title?: string, children: ReactNode }> = ({title, children}) => {
+const ContainerCol = styled(Col)`
+  max-width: 100%;
+  height: 100%;
+
+  @media (min-width: 720px) {
+    max-width: 70vw;
+  }
+
+
+  @media (min-width: 1100px) {
+    max-width: 60vw;
+  }
+
+  @media (min-width: 1440px) {
+    max-width: 50vw;
+  }
+
+  @media (min-width: 1920px) {
+    max-width: 40vw;
+  }
+
+  @media (min-width: 2400px) {
+    max-width: 30vw;
+  }
+
+`
+
+export const PageLayout: React.FC<{title?: string, center?: boolean, children: ReactNode }> = ({title, center, children}) => {
   return (
     <PageContainer>
-      <Col>
+      <ContainerCol>
         <Title>{title}</Title>
-        <ScrollCol>
+        <ScrollCol center={center}>
         {children}
         </ScrollCol>
-      </Col>
+      </ContainerCol>
     </PageContainer>
   )
 }

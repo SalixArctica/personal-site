@@ -12,8 +12,7 @@ const StyledA = styled.a`
   transition: all .1s ease-in-out;
 
   &:hover {
-    -webkit-text-stroke: 5px white;
-    color: pink;
+    -webkit-text-stroke: 1px white;
   }
 `
 

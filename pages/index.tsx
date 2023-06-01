@@ -4,7 +4,7 @@ import Card from '../components/Card'
 
 export default function Home() {
   return (
-    <PageLayout>
+    <PageLayout center>
         <Card>
           <h1>
             Hi, I'm Willow

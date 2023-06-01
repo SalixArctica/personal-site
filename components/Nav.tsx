@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Link from 'next/link'
 
 const NavContainer = styled.nav`
-  width: 100vw;
+  width: 100%;
   height: 3rem;
   display: flex;
   justify-content: space-between;
@@ -11,10 +11,10 @@ const NavContainer = styled.nav`
   padding: 0 2rem;
   position: fixed;
   top: 0;
+`
 
-  @media (min-width: 1900px) {
-    margin: 0 20vw;
-  }
+const Spacer = styled.div`
+  flex-grow: 1;
 `
 
 const Links = styled.div`
@@ -36,20 +36,20 @@ const StyledA = styled.a`
 const Nav = () => {
   return (
     <NavContainer>
-      
       <Link href={'/'} passHref legacyBehavior>
-      <a><h1>salix circuits</h1></a>
+        <a><h1>salix circuits</h1></a>
       </Link>
+      <Spacer />
       <Links>
-      <Link href={'/software'} passHref legacyBehavior>
-        <StyledA>Software</StyledA>
-      </Link>
-      <Link href={'/circuits'} passHref legacyBehavior>
-        <StyledA>Circuits</StyledA>
-      </Link>
-      <Link href={'/about'} passHref legacyBehavior>
-        <StyledA>About</StyledA>
-      </Link>
+        <Link href={'/software'} passHref legacyBehavior>
+          <StyledA>Software</StyledA>
+        </Link>
+        <Link href={'/circuits'} passHref legacyBehavior>
+          <StyledA>Circuits</StyledA>
+        </Link>
+        <Link href={'/about'} passHref legacyBehavior>
+          <StyledA>About</StyledA>
+        </Link>
       </Links>
     </NavContainer>
   )
