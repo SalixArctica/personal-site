@@ -1,3 +1,4 @@
+import { ReactFragment } from "react";
 import styled from "styled-components";
 
 type RowProps = {
@@ -44,7 +45,7 @@ const ScrollCol = styled(Col)`
   padding: 1rem 0;
 `
 
-export const PageLayout: React.FC<{title?: string, children: JSX.Element }> = ({title, children}) => {
+export const PageLayout: React.FC<{title?: string, children: ReactFragment }> = ({title, children}) => {
   return (
     <PageContainer>
       <Col>
