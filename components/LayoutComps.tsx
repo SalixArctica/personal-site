@@ -12,7 +12,7 @@ export const Row = styled.div<RowProps>`
   gap: 1rem;
 `
 
-export const Col = styled.div<{center: boolean}>`
+export const Col = styled.div<{center?: boolean}>`
   display: flex;
   flex-direction: column;
   align-items: center;
