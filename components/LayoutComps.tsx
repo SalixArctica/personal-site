@@ -44,7 +44,7 @@ const ScrollCol = styled(Col)`
   padding: 1rem 0;
 `
 
-export const PageLayout = ({title, children}) => {
+export const PageLayout: React.FC<{title?: string, children: JSX.Element }> = ({title, children}) => {
   return (
     <PageContainer>
       <Col>
