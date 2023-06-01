@@ -20,18 +20,6 @@ const Software = () => {
         <h1>New Hope</h1>
         <p>A website for a family friend. With the main goal being enabling donations to the church throughout the covid pandemic. Has a simple events system and other information</p>
       </Card>
-      <Card img="new-hope.png">
-        <h1>New Hope</h1>
-        <p>A website for a family friend. With the main goal being enabling donations to the church throughout the covid pandemic. Has a simple events system and other information</p>
-      </Card>
-      <Card img="new-hope.png">
-        <h1>New Hope</h1>
-        <p>A website for a family friend. With the main goal being enabling donations to the church throughout the covid pandemic. Has a simple events system and other information</p>
-      </Card>
-      <Card img="new-hope.png">
-        <h1>New Hope</h1>
-        <p>A website for a family friend. With the main goal being enabling donations to the church throughout the covid pandemic. Has a simple events system and other information</p>
-      </Card>
     </PageLayout>
   );
 }
