@@ -4,13 +4,31 @@ import Link from 'next/link'
 
 const NavContainer = styled.nav`
   width: 100%;
+  top: 0;
+  position: fixed;
+`
+
+const NavInner = styled.div`
   height: 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
-  position: fixed;
-  top: 0;
+  margin: 0 1rem;
+  @media (min-width: 720px) {
+    margin: 0 1rem;
+  }
+  @media (min-width: 1100px) {
+    margin: 0 5rem;
+  }
+  @media (min-width: 1440px) {
+    margin: 0 10rem;
+  }
+  @media (min-width: 1920px) {
+    margin: 0 20rem;
+  }
+  @media (min-width: 2400px) {
+    margin: 0 50rem;;
+  }
 `
 
 const Spacer = styled.div`
@@ -35,21 +53,23 @@ const StyledA = styled.a`
 const Nav = () => {
   return (
     <NavContainer>
-      <Link href={'/'} passHref legacyBehavior>
-        <a><h1>salix circuits</h1></a>
-      </Link>
-      <Spacer />
-      <Links>
-        <Link href={'/software'} passHref legacyBehavior>
-          <StyledA>Software</StyledA>
+      <NavInner>
+        <Link href={'/'} passHref legacyBehavior>
+          <a><h1>salix circuits</h1></a>
         </Link>
-        <Link href={'/circuits'} passHref legacyBehavior>
-          <StyledA>Circuits</StyledA>
-        </Link>
-        <Link href={'/about'} passHref legacyBehavior>
-          <StyledA>About</StyledA>
-        </Link>
-      </Links>
+        <Spacer />
+        <Links>
+          <Link href={'/software'} passHref legacyBehavior>
+            <StyledA>Software</StyledA>
+          </Link>
+          <Link href={'/circuits'} passHref legacyBehavior>
+            <StyledA>Circuits</StyledA>
+          </Link>
+          <Link href={'/about'} passHref legacyBehavior>
+            <StyledA>About</StyledA>
+          </Link>
+        </Links>
+      </NavInner>
     </NavContainer>
   )
 }

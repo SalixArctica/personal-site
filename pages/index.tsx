@@ -14,7 +14,7 @@ export default function Home() {
           </p>
           <Row>
             <StyledLink href="/software">Software</StyledLink>
-            <StyledLink href="/software">Circuits</StyledLink>
+            <StyledLink href="/circuits">Circuits</StyledLink>
           </Row>
         </Card>
     </PageLayout>
