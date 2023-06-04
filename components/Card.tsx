@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import React from "react";
+import styled, { css } from "styled-components";
 
-const CardContainer = styled.div`
+const CardContainer = styled.div<{hasLink: boolean}>`
   border: 1px solid white;
   border-radius: 1rem;
   display: flex;
@@ -12,9 +13,12 @@ const CardContainer = styled.div`
       filter: grayscale(0%) !important;
     }
 
-    & > * > h1 {
-      text-decoration: underline;
-    }
+    ${({hasLink}) => hasLink && css`
+      & > * > h1 {
+        text-decoration: underline;
+      }  
+    `}
+    
   }
 `
 
@@ -42,17 +46,34 @@ const Content = styled.div`
   }
 `
 
-const Card = ({children, href, img = "https://placehold.co/300x200"}) => {
+type CardProps = {
+  children: any,
+  href?: string,
+  img?: string,
+}
+
+const InnerCard = ({children, href, img = "https://placehold.co/300x200"}: CardProps) => {
   return (
-    <a href={href}>
-      <CardContainer>
-        <Img src={img} alt="placeholder"/>
-        <Content>
-          {children}
-        </Content>
-      </CardContainer>
-    </a>
-  )
+    <CardContainer hasLink={!!href}>
+      <Img src={img} alt="placeholder"/>
+      <Content>
+        {children}
+      </Content>
+    </CardContainer>
+  );
+}
+
+const Card = ({children, href, img = "https://placehold.co/300x200"}: CardProps) => {
+  if(!!href) {
+    return (
+      <a href={href}>
+        <InnerCard href={href} img={img}>{children}</InnerCard>
+      </a>
+    )
+  }
+
+  return <InnerCard img={img}>{children}</InnerCard>
+
 }
 
 export default Card;
