@@ -1,5 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import Image from 'next/image';
+
 
 const CardContainer = styled.div<{hasLink: boolean}>`
   border: 1px solid white;
@@ -22,10 +24,8 @@ const CardContainer = styled.div<{hasLink: boolean}>`
   }
 `
 
-const Img = styled.img`
+const Img = styled(Image)`
   border-radius: 1rem 0 0 1rem;
-  width: 300px;
-  height: 200px;
 
   object-fit: cover;
   object-position: center;
@@ -55,7 +55,7 @@ type CardProps = {
 const InnerCard = ({children, href, img = "https://placehold.co/300x200"}: CardProps) => {
   return (
     <CardContainer hasLink={!!href}>
-      <Img src={img} alt="placeholder"/>
+      <Img width={300} height={200} src={'/' + img} alt="placeholder"/>
       <Content>
         {children}
       </Content>
