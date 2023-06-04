@@ -22,4 +22,11 @@ const StyledLink = ({ href, children }) => (
   </Link>
 )
 
+export const Anchor = styled.a`
+  text-decoration: underline;
+  & :hover {
+    font-weight: bold;
+  }
+`
+
 export default StyledLink

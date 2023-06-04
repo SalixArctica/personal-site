@@ -7,12 +7,13 @@ const CardContainer = styled.div`
   gap: 1rem;
   padding: 1rem;
 
-
-
-
   &:hover {
     & > img {
       filter: grayscale(0%) !important;
+    }
+
+    & > * > h1 {
+      text-decoration: underline;
     }
   }
 `
@@ -41,14 +42,16 @@ const Content = styled.div`
   }
 `
 
-const Card = ({children, img = "https://placehold.co/300x200"}) => {
+const Card = ({children, href, img = "https://placehold.co/300x200"}) => {
   return (
-    <CardContainer>
-      <Img src={img} alt="placeholder"/>
-      <Content>
-        {children}
-      </Content>
-    </CardContainer>
+    <a href={href}>
+      <CardContainer>
+        <Img src={img} alt="placeholder"/>
+        <Content>
+          {children}
+        </Content>
+      </CardContainer>
+    </a>
   )
 }
 
